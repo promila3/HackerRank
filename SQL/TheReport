@@ -1,0 +1,10 @@
+https://www.hackerrank.com/challenges/the-report
+select case
+   when g.grade < 8 then  'NULL'
+   else s.name
+    end, G.GRADE,
+    S.MARKS
+from students s inner join grades G
+on s.marks >= G.MIN_MARK
+and S.marks <= G.MAX_MARK
+order by G.GRADE DESC, S.NAME;
