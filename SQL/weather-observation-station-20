@@ -1,0 +1,5 @@
+https://www.hackerrank.com/challenges/weather-observation-station-20
+
+set @amount = (select count(*) from station)/2;
+prepare stmt from 'select lat_n from (select round(lat_n,4) as lat_n from station order by lat_n limit ?) lat_tbl order by lat_n desc limit 1';
+execute stmt using @amount;
