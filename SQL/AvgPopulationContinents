@@ -1,0 +1,5 @@
+https://www.hackerrank.com/challenges/average-population-of-each-continent
+select d.continent, floor(avg(c.population))
+from city c, country d
+where c.countrycode = d.code
+group by d.continent;
