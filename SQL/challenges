@@ -1,0 +1,12 @@
+https://www.hackerrank.com/challenges/challenges
+
+set @row_num = 0;
+select min(start_date), max(end_date) 
+from (
+select start_date, end_date, (end_date - rnum) as diff 
+from (
+    select start_date, end_date, @row_num  := @row_num +1 as rnum 
+    from projects order by start_date) temp 
+    order by start_date) temp2
+group by diff 
+order by (max(end_date) - min(start_date)), min(start_date)
