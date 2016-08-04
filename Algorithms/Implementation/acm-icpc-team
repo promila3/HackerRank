@@ -1,0 +1,41 @@
+https://www.hackerrank.com/challenges/acm-icpc-team
+
+import sys
+
+
+n,m = raw_input().strip().split(' ')
+n,m = [int(n),int(m)]
+topic = []
+topic_i = 0
+maxTopics = 0
+for topic_i in xrange(n):
+   topic_t = str(raw_input().strip())
+   topic.append(topic_t)
+
+for topic_i in topic:
+    num1 = int(topic_i,2)
+    for topic_j in topic:
+        num2 = int(topic_j,2)
+        binOr = bin(num1 | num2)
+        tempTopic = binOr.count('1')   
+        if tempTopic > maxTopics :
+            maxTopics = tempTopic
+            
+print maxTopics
+#maxTeams = set()
+maxTeams =[]
+
+for topic_i in topic:
+    num1 = int(topic_i,2)
+    for topic_j in topic:
+        num2 = int(topic_j,2)
+        binOr = bin(num1 | num2)
+        tempTopic = binOr.count('1')  
+        if tempTopic == maxTopics :
+            team =[ topic_i,topic_j]
+            team.sort()
+            if team  not in maxTeams:
+                maxTeams.append(team)
+           #maxTeams.add(team)
+            
+print len(maxTeams)
