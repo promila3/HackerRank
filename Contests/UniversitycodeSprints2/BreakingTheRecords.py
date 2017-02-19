@@ -1,3 +1,4 @@
+'''
 Maria plays  game
 
 of college basketball in a season. Because she wants to go pro, she tracks her points scored per game sequentially in an array defined as . After each game , she checks to see if score  breaks her record for most or least points scored so far during that season.
@@ -34,6 +35,7 @@ Output Format
 
 Print two space-seperated integers describing the respective numbers of times her best (highest) score increased and her worst (lowest) score decreased.
 */
+'''
 #!/bin/python
 
 import sys
